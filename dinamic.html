@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Create local storage items</h2>
+    <button onclick="createItems()">Create local storage items</button>
+    <h2>Display Items</h2>
+    <button onclick="displayItems()">Display items</button>
+    <p id="show"></p>
+    <h2>Remove Items</h2>
+    <button onclick="deleteItems()">Clear locak storage</button>
+    <h2>Display Items Again</h2>
+    <button onclick="displayItems()">Display again</button>
+    <p id="demo"></p>
+    <script>
+      function createItems() {
+        // Set item in local storage.
+        localStorage.setItem("Welcome toW3Docs ", " ");
+        localStorage.setItem("Storage Clear Method ", " ");
+      }
+      function deleteItems() {
+        // Clear localStorage items
+        localStorage.clear();
+      }
+      function displayItems() {
+        let l, i;
+        // Display items
+        document.getElementById("show").innerHTML = "";
+        for (i = 0; i < localStorage.length; i++) {
+          res = localStorage.key(i);
+          document.getElementById("show").innerHTML += res;
+        }
+      }
+    </script>
+  </body>
+</html>
